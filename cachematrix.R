@@ -1,8 +1,9 @@
-## Put comments here that give an overall description of what your
-## functions do
+## makeCacheMatrix and cacheSolve work together to store an input nxn matrix 
+## and calculates its inverse for future use. Matrices and inverses can be
+## accessed with mat$get() and mat$getInv() defined functions.
 
-## Write a short comment describing this function
-
+## makeCacheMatrix takes an input nxn matrix and stores it in cache alongside 
+## an initiated variables for its inverse.
 makeCacheMatrix <- function(mat = matrix()) {
   inv <- NULL
   set <- function(newMatrix) {
@@ -18,9 +19,8 @@ makeCacheMatrix <- function(mat = matrix()) {
        getInv = getInv)
 }
 
-
-## Write a short comment describing this function
-
+## cacheSolve takes an input matrix and solves its inverse, if not already 
+## solved, then stores the inverse in the supplied cache.
 cacheSolve <- function(mat, ...) {
   inv <- mat$getInv()
   if(!is.null(inv)) {
